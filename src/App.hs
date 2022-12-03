@@ -8,6 +8,7 @@ import Data.Text (Text)
 import Data.Text.IO qualified as T
 import Day01 qualified
 import Day02 qualified
+import Day03 qualified
 import Options.Applicative
 
 --------------------------------------------------------------------------------
@@ -50,6 +51,8 @@ solve 1 1 = Day01.solveA
 solve 1 2 = Day01.solveB
 solve 2 1 = Day02.solveA
 solve 2 2 = Day02.solveB
+solve 3 1 = Day03.solveA
+solve 3 2 = Day03.solveB
 solve _ _ = error "Invalid day and part"
 
 --------------------------------------------------------------------------------

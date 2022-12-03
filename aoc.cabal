@@ -24,6 +24,7 @@ library
       App
       Day01
       Day02
+      Day03
       Util
   other-modules:
       Paths_aoc
