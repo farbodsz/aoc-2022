@@ -13,9 +13,12 @@ dependencies:
   - text
 
 default-extensions:
+  - DuplicateRecordFields
   - ImportQualifiedPost
+  - NoFieldSelectors
   - OverloadedRecordDot
   - OverloadedStrings
+  - TypeApplications
 
 ghc-options:
   - -Wall

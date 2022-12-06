@@ -26,15 +26,19 @@ library
       Day02
       Day03
       Day04
+      Day05
       Util
   other-modules:
       Paths_aoc
   hs-source-dirs:
       src
   default-extensions:
+      DuplicateRecordFields
       ImportQualifiedPost
+      NoFieldSelectors
       OverloadedRecordDot
       OverloadedStrings
+      TypeApplications
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
@@ -50,9 +54,12 @@ executable aoc-exe
   hs-source-dirs:
       app
   default-extensions:
+      DuplicateRecordFields
       ImportQualifiedPost
+      NoFieldSelectors
       OverloadedRecordDot
       OverloadedStrings
+      TypeApplications
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       aoc

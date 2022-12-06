@@ -10,6 +10,7 @@ import Day01 qualified
 import Day02 qualified
 import Day03 qualified
 import Day04 qualified
+import Day05 qualified
 import Options.Applicative
 
 --------------------------------------------------------------------------------
@@ -56,6 +57,8 @@ solve 3 1 = Day03.solveA
 solve 3 2 = Day03.solveB
 solve 4 1 = Day04.solveA
 solve 4 2 = Day04.solveB
+solve 5 1 = Day05.solveA
+solve 5 2 = Day05.solveB
 solve _ _ = error "Invalid day and part"
 
 --------------------------------------------------------------------------------
