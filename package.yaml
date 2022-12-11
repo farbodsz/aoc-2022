@@ -13,6 +13,7 @@ dependencies:
   - mtl
   - optparse-applicative
   - text
+  - vector
 
 default-extensions:
   - DuplicateRecordFields
