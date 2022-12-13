@@ -31,6 +31,7 @@ library
       Day08
       Day09
       Day12
+      Day13
       Util
   other-modules:
       Paths_aoc
@@ -49,6 +50,7 @@ library
       base >=4.7 && <5
     , containers
     , extra
+    , megaparsec
     , mtl
     , optparse-applicative
     , text
@@ -75,6 +77,7 @@ executable aoc-exe
     , base >=4.7 && <5
     , containers
     , extra
+    , megaparsec
     , mtl
     , optparse-applicative
     , text
