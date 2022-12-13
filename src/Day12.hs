@@ -31,6 +31,11 @@ gridFind grid n = do
     x <- V.findIndex (== n) (grid ! y)
     pure (x, y)
 
+gridFindMany :: Eq a => Grid a -> a -> Vector Pos
+gridFindMany grid n =
+    let ys = V.findIndices (\row -> n `V.elem` row) grid
+     in V.concatMap (\y -> (,y) <$> V.findIndices (== n) (grid ! y)) ys
+
 gridBounds :: Grid a -> Bounds
 gridBounds g = (V.length (V.head g) - 1, V.length g - 1)
 
@@ -74,16 +79,22 @@ dijkstra grid src = go (S.singleton src) (Seq.singleton (src, 0))
 --------------------------------------------------------------------------------
 -- Solution
 
-solveGrid :: Grid Char -> Maybe Distance
-solveGrid g = do
-    src <- gridFind g 'S'
-    dest <- gridFind g 'E'
-    dijkstra g src dest
-
 solveA :: Text -> Text
-solveA = tshow . fromJust . solveGrid . processInput
+solveA = tshow . fromJust . go . processInput
+  where
+    go grid = do
+        src <- gridFind grid 'S'
+        dest <- gridFind grid 'E'
+        dijkstra grid src dest
 
 solveB :: Text -> Text
-solveB = undefined
+solveB = tshow . go . processInput
+  where
+    go grid =
+        let src = fromJust $ gridFind grid 'S'
+            dest = fromJust $ gridFind grid 'E'
+            as = gridFindMany grid 'a'
+            answers = V.map (\a -> dijkstra grid a dest) (V.cons src as)
+         in minimum $ V.catMaybes answers
 
 --------------------------------------------------------------------------------
