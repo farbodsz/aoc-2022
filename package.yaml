@@ -21,6 +21,7 @@ default-extensions:
   - NoFieldSelectors
   - OverloadedRecordDot
   - OverloadedStrings
+  - TupleSections
   - TypeApplications
 
 ghc-options:
