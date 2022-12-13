@@ -13,7 +13,6 @@ import Text.Megaparsec.Char (char, digitChar, string)
 import Util
 
 --------------------------------------------------------------------------------
--- Packet
 
 data Packet = PItem Int | PList [Packet]
     deriving (Eq, Show)
@@ -25,7 +24,6 @@ instance Ord Packet where
     compare p@(PList _) q@(PItem _) = compare p (PList [q])
 
 --------------------------------------------------------------------------------
--- Parsing
 
 type Parser = Parsec Void Text
 
@@ -57,6 +55,16 @@ solveA =
         . packetGroups 2
 
 solveB :: Text -> Text
-solveB = undefined
+solveB =
+    tshow @Int
+        . product
+        . findDividerIdxs
+        . sort
+        . concat
+        . (dividers :)
+        . packetGroups 2
+  where
+    dividers = parse <$> ["[[2]]", "[[6]]"]
+    findDividerIdxs = map fst . filter ((`elem` dividers) . snd) . zip [1 ..]
 
 --------------------------------------------------------------------------------
