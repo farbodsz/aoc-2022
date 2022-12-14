@@ -16,6 +16,7 @@ import Day08 qualified
 import Day09 qualified
 import Day12 qualified
 import Day13 qualified
+import Day14 qualified
 import Options.Applicative
 
 --------------------------------------------------------------------------------
@@ -74,6 +75,8 @@ solve 12 1 = Day12.solveA
 solve 12 2 = Day12.solveB
 solve 13 1 = Day13.solveA
 solve 13 2 = Day13.solveB
+solve 14 1 = Day14.solveA
+solve 14 2 = Day14.solveB
 solve _ _ = error "Invalid day and part"
 
 --------------------------------------------------------------------------------
