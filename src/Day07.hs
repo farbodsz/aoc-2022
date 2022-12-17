@@ -3,6 +3,7 @@
 module Day07 (solveA, solveB) where
 
 import Control.Monad (liftM2)
+import Data.List (sort)
 import Data.Map.Strict ((!))
 import Data.Map.Strict qualified as M
 import Data.Maybe (fromJust)
@@ -83,6 +84,9 @@ solveA =
         . processInput
 
 solveB :: Text -> Text
-solveB = undefined
+solveB t = tshow . head . filter (\x -> unused + x >= 30000000) . sort $ sizes
+  where
+    unused = 70000000 - maximum sizes
+    sizes = map snd . computeSizes . mkFileSystem . processInput $ t
 
 --------------------------------------------------------------------------------
