@@ -15,6 +15,7 @@ import Day06 qualified
 import Day07 qualified
 import Day08 qualified
 import Day09 qualified
+import Day10 qualified
 import Day12 qualified
 import Day13 qualified
 import Day14 qualified
@@ -75,6 +76,8 @@ solve 8 1 = Day08.solveA
 solve 8 2 = Day08.solveB
 solve 9 1 = Day09.solveA
 solve 9 2 = Day09.solveB
+solve 10 1 = Day10.solveA
+solve 10 2 = Day10.solveB
 solve 12 1 = Day12.solveA
 solve 12 2 = Day12.solveB
 solve 13 1 = Day13.solveA
