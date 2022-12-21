@@ -39,6 +39,7 @@ library
       Day15
       Day16
       Day18
+      Day21
       Util
   other-modules:
       Paths_aoc
